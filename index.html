@@ -157,6 +157,21 @@
 			text-align: center;
 		}
 
+		
+		#copy {
+			position: fixed;
+			bottom: 12px;
+			right: 56px;
+			/* transform: translateX(-50%); */
+		}
+
+			#copy p {
+			color: #bd1e59;
+			text-align: center;
+			font-weight: 700;
+			cursor: pointer;
+			}
+
 		.show_info .info_my>* {
 			display: inline-block !important;
 			vertical-align: middle;
@@ -176,6 +191,43 @@
 			text-overflow: ellipsis;
 			overflow: hidden;
 			white-space: nowrap;
+		}
+
+		@media (max-width: 990px) {
+			#menu {
+			position: absolute;
+			bottom: 67px;
+			width: 100%;
+			text-align: center;
+			display: flex;
+			gap: 10px;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+
+		button {
+			color: rgb(214 142 142 / 94%);
+			background: #4f2621b8;
+			outline: 3px solid rgb(200 56 45 / 52%);
+			border: 0px;
+			border-radius: 44px;
+			padding: 9px 17px;
+			margin: 0 10px;
+			/* background: red; */
+			font-size: .8rem;
+			font-weight: 700;
+			cursor: pointer;
+		}
+
+		#copy {
+			position: fixed;
+			bottom: 6px;
+			right: unset;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
 		}
 	</style>
 	<link rel="stylesheet" href="css/animate.min.css">
@@ -206,6 +258,13 @@
 		<div class="intro">Happy Mahashivratri! 🕉️✨</div>
 	</div>
 
+	<div id="copy">
+		<p class="text-center text-white text-sm">OG Creator <a
+			href="https://www.instagram.com/aoudumber.dev/reels/#">@aoudumber.dev</a></p>
+	  </div>
+
+	<audio id="media" src="/audio/Namo Namo.mp3" autoplay loop preload="auto" ></audio>
+
 	<script>
 		var personArray = [];
 		var CurPersonNum = 0;
@@ -213,6 +272,9 @@
 		// Animation effects
 		var _in = ['bounceIn', 'bounceInDown', 'bounceInLeft', 'bounceInRight', 'bounceInUp', 'fadeIn', 'fadeInDown', 'fadeInDownBig', 'fadeInLeft', 'fadeInLeftBig', 'fadeInRight', 'fadeInRightBig', 'fadeInUp', 'fadeInUpBig', 'rotateIn', 'rotateInDownLeft', 'rotateInDownRight', 'rotateInUpLeft', 'rotateInUpRight', 'slideInDown', 'slideInLeft', 'slideInRight'];
 		var _out = ['bounceOut', 'bounceOutDown', 'bounceOutLeft', 'bounceOutRight', 'bounceOutUp', 'fadeOut', 'fadeOutDown', 'fadeOutDownBig', 'fadeOutLeft', 'fadeOutLeftBig', 'fadeOutRight', 'fadeOutRightBig', 'fadeOutUp', 'fadeOutUpBig', 'rotateOut', 'rotateOutDownLeft', 'rotateOutDownRight', 'rotateOutUpLeft', 'rotateOutUpRight', 'slideOutDown', 'slideOutLeft', 'slideOutRight'];
+
+		var audio = document.getElementById("media");
+		audio.volume = 0.5
 
 		// Simulate push data
 		var s = setInterval(function () {
@@ -226,7 +288,7 @@
 			setTimeout(function () {
 				$('.show_info').removeClass(_in[rand_in]);
 				var img = document.getElementsByClassName('element')[CurPersonNum].getElementsByTagName('img')[0];
-				img.setAttribute('src', 'img/1.png');
+				img.setAttribute('src', 'img/4.png');
 				++CurPersonNum;
 				setTimeout(function () {
 					$('.show_info').addClass(_out[rand_out]);
@@ -240,7 +302,7 @@
 
 		// Generate dummy data
 		for (var i = 0; i < 199; i++) {
-			personArray.push({ image: "img/1.png" });
+			personArray.push({ image: "img/5.png" });
 		}
 
 		var table = [];
